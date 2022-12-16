@@ -1,19 +1,23 @@
 import { Content } from "./content"
 
-test('it should be able to create a notification content', () => {
-    const content = new Content(' Voce recebeu uma solicitaco de amizade');
+describe('Notification Content', () => {
+    test('it should be able to create a notification content', () => {
+        const content = new Content(' Voce recebeu uma solicitaco de amizade');
 
-    expect(content).toBeTruthy();
-});
+        expect(content).toBeTruthy();
+    });
 
-test('it should not be able to create a notification content with less than 5 characters', () => {
+    test('it should not be able to create a notification content with less than 5 characters', () => {
 
-    expect(() => new Content('aa')).toThrow();
-});
+        expect(() => new Content('aa')).toThrow();
+    });
 
-test('it should not be able to create a notification content with more than 240 characters', () => {
+    test('it should not be able to create a notification content with more than 240 characters', () => {
 
-    expect(() => new Content('a'.repeat(241))).toThrow();
-});
+        expect(() => new Content('a'.repeat(241))).toThrow();
+    });
+
+})
+
 
 //run  npm run test
